@@ -1,0 +1,122 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="sk">
+
+<head>
+    <title>Hall of fame</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" th:href="@{/css/backgammon-lukac.css}" />
+    <link rel="stylesheet" th:href="@{/css/hof.css}" />
+    <link rel="stylesheet" th:href="@{/css/rating.css}" />
+
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+
+</head>
+
+<div class="box">
+
+    <header>
+        <div class="container">
+            <ul>
+                <li><a th:href="@{/backgammon-lukac}">BACKGAMMON</a></li>
+                <li><a th:href="@{/backgammon-lukac/new}">New Game</a></li>
+                <li><a th:href="@{/backgammon-lukac/hof}">Hall of fame</a></li>
+                <li><a href="#" class="active">Comments&Rating</a></li>
+                <!--        <li><a href="#about">Rating</a></li>-->
+                <li class="right">
+                    <div th:if="${loggedUser != null}" class="inline">
+                        <ul>
+                            <li><p th:text="${loggedUser}"></p></li>
+                            <li><a th:href="@{/backgammon-lukac/logout}">Log out</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="right">
+                    <div th:if="${loggedUser == null}" class="inline">
+                        <ul>
+                            <li><a th:href="@{/backgammon-lukac/login}">Login</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+<div class="container">
+
+    <div class="margin">
+        <h2>Comments</h2>
+
+        <table>
+            <tr>
+                <th>Username</th>
+                <th>Comment</th>
+                <th>Commented on</th>
+            </tr>
+            <tr th:each="comment : ${comments}">
+                <td th:text="${comment.player}"></td>
+                <td th:text="${comment.comment}"></td>
+                <td th:text="${comment.commentedOn}"></td>
+            </tr>
+        </table>
+    </div>
+
+    <div th:if="${loggedUser != null}">
+        <form method="post" th:action="@{/backgammon-lukac/addComment}" class="form-flex">
+            <textarea name="comment" cols="100" rows="8" required placeholder="Text..."></textarea>
+            <input type="submit" value="Comment">
+        </form>
+    </div>
+
+
+</div>
+    <h2>Average rating: <span th:text="${rating}"></span></h2>
+
+    <span th:if="${loggedUser != null}">
+<!--        <h2>Your rating: <span th:text="${rate}"></span></h2>-->
+            <form th:action="@{/backgammon-lukac/setRating}" method="post">
+                <div class="rating">
+                    <input type="radio" id="star5" name="rate" value="5" onchange="this.form.submit()"/>
+                    <label for="star5" title="5"></label>
+                    <input type="radio" id="star4" name="rate" value="4" onchange="this.form.submit()"/>
+                    <label for="star4" title="4"></label>
+                    <input type="radio" id="star3" name="rate" value="3" onchange="this.form.submit()"/>
+                    <label for="star3" title="3"></label>
+                    <input type="radio" id="star2" name="rate" value="2" onchange="this.form.submit()"/>
+                    <label for="star2" title="2"></label>
+                    <input type="radio" id="star1" name="rate" value="1" onchange="this.form.submit()"/>
+                    <label for="star1" title="1"></label>
+                </div>
+            </form>
+        </span>
+</div>
+
+</div>
+
+
+<!--    <div th:if=""-->
+
+
+
+<!--    <li class="right">-->
+<!--        <div th:if="${loggedUser != null}" class="inline">-->
+<!--            <ul>-->
+<!--                <li><p th:text="${loggedUser}"></p></li>-->
+<!--                <li><a th:href="@{/backgammon-lukac/logout}">Log out</a></li>-->
+<!--            </ul>-->
+<!--        </div>-->
+<!--    </li>-->
+<!--    <li class="right">-->
+<!--        <div th:if="${loggedUser == null}" class="inline">-->
+<!--            <ul>-->
+<!--                <li><a th:href="@{/backgammon-lukac/login}">Login</a></li>-->
+<!--            </ul>-->
+<!--        </div>-->
+<!--    </li>-->
+
+</div>
+
+</div>
+
+</body>
+</html>

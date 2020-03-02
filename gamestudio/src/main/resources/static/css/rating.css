@@ -1,0 +1,128 @@
+
+/*fieldset, label { margin: 0; padding: 0; }*/
+/*!*body{ margin: 20px; }*!*/
+/*!*h1 { font-size: 1.5em; margin: 10px; }*!*/
+
+/*!****** Style Star Rating Widget *****!*/
+
+/*.rating {*/
+/*    border: none;*/
+/*    !*float: ;*!*/
+/*}*/
+
+/*.rating > input { display: none; }*/
+/*.rating > label:before {*/
+/*    margin: 5px;*/
+/*    font-size: 1.25em;*/
+/*    display: inline-block;*/
+/*    content: "\f005";*/
+/*}*/
+
+/*.rating > .half:before {*/
+/*    content: "\f089";*/
+/*    position: absolute;*/
+/*}*/
+
+/*.rating > label {*/
+/*    color: #ddd;*/
+/*    float: right;*/
+/*}*/
+
+/*!***** CSS Magic to Highlight Stars on Hover *****!*/
+
+/*.rating > input:checked ~ label, !* show gold star when clicked *!*/
+/*.rating:not(:checked) > label:hover, !* hover current star *!*/
+/*.rating:not(:checked) > label:hover ~ label { color: #FFD700;  } !* hover previous stars in list *!*/
+
+/*.rating > input:checked + label:hover, !* hover current star when changing rating *!*/
+/*.rating > input:checked ~ label:hover,*/
+/*.rating > label:hover ~ input:checked ~ label, !* lighten current selection *!*/
+/*.rating > input:checked ~ label:hover ~ label { color: #FFED85;  }*/
+
+
+
+/*.rate {*/
+/*    float: left;*/
+/*    height: 50px;*/
+/*    padding: 0 1rem;*/
+/*    margin: auto;*/
+/*    width: 250px;*/
+/*}*/
+/*.rate:not(:checked) > input {*/
+/*    position:absolute;*/
+/*    top:-9999px;*/
+/*}*/
+/*.rate:not(:checked) > label {*/
+/*    float:right;*/
+/*    width:auto;*/
+/*    overflow:hidden;*/
+/*    white-space:nowrap;*/
+/*    cursor:pointer;*/
+/*    font-size:50px;*/
+/*    color:#ccc;*/
+/*}*/
+/*.rate:not(:checked) > label:before {*/
+/*    content: '★ ';*/
+/*}*/
+/*.rate > input:checked ~ label {*/
+/*    color: #ffc700;*/
+/*}*/
+/*.rate:not(:checked) > label:hover,*/
+/*.rate:not(:checked) > label:hover ~ label {*/
+/*    color: #deb217;*/
+/*}*/
+/*.rate > input:checked + label:hover,*/
+/*.rate > input:checked + label:hover ~ label,*/
+/*.rate > input:checked ~ label:hover,*/
+/*.rate > input:checked ~ label:hover ~ label,*/
+/*.rate > label:hover ~ input:checked ~ label {*/
+/*    color: #c59b08;*/
+/*}*/
+
+
+.rating{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,-50%) rotateY(180deg);
+    display: flex;
+}
+
+.rating input{
+    display: none;
+}
+
+.rating label{
+    display: block;
+    cursor: pointer;
+    width: 50px;
+}
+
+.rating label:before{
+    content: '\f005';
+    font-family: fontAwesome;
+    position: relative;
+    display: block;
+    font-size: 50px;
+    color: #101010;
+}
+
+.rating label:after{
+    content: '\f005';
+    font-family: fontAwesome;
+    position: absolute;
+    display: block;
+    font-size: 50px;
+    color: darkorange;
+    top:0;
+    opacity:0;
+    transition:.5s;
+    text-shadow: 0 2px 5px rgba(0,0,0,.5);
+}
+
+.rating label:hover:after, .rating input:checked ~ label:after,.rating label:hover ~ label:after{
+    opacity: 1;
+}
+
+.rating{
+    margin-bottom:40px;
+}

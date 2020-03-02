@@ -1,0 +1,327 @@
+body{
+    display: block;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: none;
+}
+
+/*table tr td{*/
+/*    width: 40px;*/
+/*    height: 40px;*/
+
+/*}*/
+
+td {
+    padding: 0;
+    margin: 0;
+}
+
+tr{
+    padding: 0;
+    margin: 0;
+}
+
+.background{
+    background: url("../images.backgammon/backgammon-field7.png"), center;
+    color: red;
+    height:570px;
+    width: 680px;
+    margin: auto;
+    background-size: 100%;
+    padding-top: 22px;
+}
+
+.container{
+    width: 70%;
+    /*display: flex;*/
+    /*width:660px;*/
+    margin:auto;
+
+}
+
+
+.avatar-left, .avatar-right{
+    width: 150px;
+    height: 50px;
+}
+
+.avatar-right{
+    margin-left: 100px;
+}
+
+.left{
+    float: left;
+}
+
+.right{
+    float: right;
+}
+
+/*table{*/
+/*    margin: 0 25px 60px 27px ;*/
+/*    padding: 0;*/
+/*    !*width: 650px;*!*/
+/*    !*margin-top: 25px;*!*/
+/*}*/
+
+.field{
+    padding: 0;
+    margin: 0 25px 0 23px;
+    width: 570px;
+}
+
+.field tr td{
+    height: 40px;
+    width: 40px;
+    padding: 0;
+    margin: 0;
+    /*background: green;*/
+    /*border: solid red;*/
+}
+
+.border{
+    /*background: aqua;*/
+    /*margin-left: 84px;*/
+    /*border: solid green;*/
+    /*width: 40px;*/
+    /*height: 50px;*/
+    /*margin: 0;*/
+}
+
+img{
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+a img:hover {
+    background: orange;
+    border-radius: 50%;
+    border:none;
+    opacity: 5%;
+}
+
+.end {
+    background: darkorange;
+    border-radius: 50%;
+    border:none;
+}
+
+/*.end img{*/
+/*    opacity: 50;*/
+/*}*/
+
+#dices tr td,#dices2 tr td{
+    height: 40px;
+    width: 40px;
+}
+
+#dices,#dices2{
+    margin-left: 60px;
+    margin-top: 35px;
+}
+
+.flex,.flex2{
+    display: flex;
+}
+
+.relative-position{
+    /*position: absolute;*/
+    /*left: 300px;*/
+}
+
+.dices-right{
+    margin-top: 35px;
+    margin-left: 40px;
+}
+
+#taken-away{
+    margin-top:12px;
+    margin-bottom:12px;
+}
+
+#taken-away tr td{
+    width: 40px;
+    height: 40px;
+}
+
+/*.home tr td{*/
+/*    width: 40px;*/
+/*    height: 10px;*/
+/*    padding: 0;*/
+/*    margin: 0;*/
+/*}*/
+
+.home , .home2, .nah{
+    width: 40px;
+    height: 208px;
+    margin-left:-1px;
+}
+
+.home img, .home2 img, .nah img{
+    height: 208px;
+}
+
+.home img:hover, .home2 img:hover, .nah img:hover{
+    background: none;
+    border-radius: 0;
+}
+
+.home2{
+    margin-top: 6px;
+}
+
+/*.home tr {*/
+/*    height: 10px;*/
+/*}*/
+
+/*.home tr td img{*/
+/*    padding: 0;*/
+/*    margin: 0;*/
+/*}*/
+
+/*.home tr td a{*/
+/*    padding: 0;*/
+/*    margin: 0;*/
+
+
+a{
+    padding: 0;
+    margin: 0;
+}
+
+.table{
+    position: relative;
+    top: -380px;
+    left: 160px;
+    width: 300px;
+    height: 200px;
+    /*opacity: 0;*/
+    /*animation-delay: 1.3s;*/
+}
+
+.table img{
+    border-radius: 7%;
+}
+
+.table a{
+    position:relative;
+    top:-70px;
+         left:55px;
+    margin-left: 80px;
+    text-decoration: none;
+    color: black;
+}
+
+
+
+/** navbar */
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
+}
+
+p{
+    padding: 0;
+    margin: 0;
+}
+
+li p{
+    color: darkorange;
+    text-align: center;
+    padding: 14px 16px;
+}
+
+ul li .active{
+    background: darkorange;
+}
+
+
+body{
+    margin: 0;
+    padding: 0;
+    background: #EFEFEF;
+
+}
+
+header{
+    margin-bottom: 50px;
+    margin-top: 0;
+    background: #333;
+}
+
+.inline{
+    display: inline;
+    color: #fff;
+}
+
+.score{
+    position: relative;
+    top: -170px;
+    left: 100px;
+    color: #000;
+}
+
+/*.home-end{*/
+/*    background: darkorange;*/
+/*}*/
+
+.home img{
+    background: darkorange;
+    border-radius:0;
+    opacity: 0.8;
+}
+
+.home img:hover{
+    background: orange;
+    border-radius: 0;
+    opacity: 0.2;
+}
+
+.form-flex{
+    margin: auto;
+    display: grid;
+}
+
+.form-flex textarea{
+    width:70%;
+    outline:none;
+    border-radius:10px;
+    border:none;
+    margin: 40px auto auto;
+    padding:10px;
+}
+
+.form-flex input{
+    width:70%;
+    margin: 20px auto auto;
+    background:darkorange;
+    border:none;
+    height:30px;
+    color:white;
+    border-radius:10px;
+}
+

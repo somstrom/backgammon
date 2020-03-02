@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="sk">
+
+<head>
+    <title>Hall of fame</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" th:href="@{/css/backgammon-lukac.css}" />
+    <link rel="stylesheet" th:href="@{/css/hof.css}" />
+
+</head>
+
+<body>
+
+<div class="box">
+
+<header>
+    <div class="container">
+        <ul>
+            <li><a th:href="@{/backgammon-lukac}">BACKGAMMON</a></li>
+            <li><a th:href="@{/backgammon-lukac/new}">New Game</a></li>
+            <li><a href="#" class="active">Hall of fame</a></li>
+            <li><a th:href="@{/backgammon-lukac/comments}">Comments&Rating</a></li>
+            <!--        <li><a href="#about">Rating</a></li>-->
+            <li class="right">
+                <div th:if="${loggedUser != null}" class="inline">
+                    <ul>
+                        <li><p th:text="${loggedUser}"></p></li>
+                        <li><a th:href="@{/backgammon-lukac/logout}">Log out</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="right">
+                <div th:if="${loggedUser == null}" class="inline">
+                    <ul>
+                        <li><a th:href="@{/backgammon-lukac/login}">Login</a></li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+</header>
+
+
+<div class="container">
+
+    <div class="margin">
+    <h2>Hall of fame</h2>
+
+    <table>
+        <tr>
+            <th>Username</th>
+            <th>Points</th>
+            <th>Played on</th>
+        </tr>
+        <tr th:each="score : ${scores}">
+            <td th:text="${score.player}"></td>
+            <td th:text="${score.points}"></td>
+            <td th:text="${score.playedOn}"></td>
+        </tr>
+    </table>
+    </div>
+
+
+
+
+<!--        <div th:each="score : ${scores}">-->
+<!--            <span th:text="${score.player}"/>-->
+<!--            <span th:text="${score.points}"/>-->
+<!--    &lt;!&ndash;        <span th:text="${score.played_on}"/>&ndash;&gt;-->
+<!--        </div>-->
+</div>
+<!--<h2>Comments</h2>-->
+<!--<ol>-->
+<!--    <li th:each="comment : ${comments}">-->
+<!--        <span th:text="${comment.player}"/>-->
+<!--        <span th:text="${comment.comment}"/>-->
+<!--        &lt;!&ndash;        <span th:text="${score.played_on}"/>&ndash;&gt;-->
+<!--    </li>-->
+<!--</ol>-->
+
+<!--<h2>Rating</h2>-->
+<!--<p th:text="${rating}"></p>-->
+</div>
+</body>
+</html>

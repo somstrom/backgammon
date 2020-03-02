@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Backgammon</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" th:href="@{/css/backgammon-lukac-view.css}" />
+</head>
+
+
+<body>
+<div class="box">
+
+    <header>
+        <div class="container">
+            <ul>
+                <li><a href="#" class="active">BACKGAMMON</a></li>
+                <li><a th:href="@{/backgammon-lukac/new-view}">New Game</a></li>
+<!--                <li><a th:href="@{/backgammon-lukac/hof}">Hall of fame</a></li>-->
+<!--                <li><a th:href="@{/backgammon-lukac/comments}">Comments&Rating</a></li>-->
+                <li class="right">
+                    <div th:if="${loggedUser != null}" class="inline">
+                        <ul>
+                            <li><p th:text="${loggedUser}"></p></li>
+                            <li><a th:href="@{/backgammon-lukac/logout-view}">Log out</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="right">
+                    <div th:if="${loggedUser == null}" class="inline">
+                        <ul>
+                            <li><a th:href="@{/backgammon-lukac/login-view}">Login</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <div class="container">
+        <div th:utext="${@backgammonLukacController.renderAsHtml()}"></div>
+    </div>
+
+    <script th:src="@{/scripts/backgammon-lukac-view.js}"></script>
+</div>
+</body>
+</html>

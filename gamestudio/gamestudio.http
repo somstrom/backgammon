@@ -1,0 +1,55 @@
+POST http://localhost:8080/rest/score
+Content-Type: application/json
+
+{
+  "game": "backgammon",
+  "player": "marek",
+  "points": 45,
+  "playedOn": "2019-03-25T12:40:33"
+}
+
+###
+
+GET http://localhost:8080/rest/score/backgammon
+Content-Type: application/json
+
+###
+
+POST http://localhost:8080/rest/comment
+Content-Type: application/json
+
+{
+  "game": "backgammon",
+  "player": "marko",
+  "comment": "asdasd",
+  "commentedOn": "2019-03-28T12:40:55"
+}
+
+###
+
+GET http://localhost:8080/rest/comment/backgammon
+Content-Type: application/json
+
+###
+
+POST http://localhost:8080/rest/rating
+Content-Type: application/json
+
+{
+  "game": "backgammon",
+  "player": "peter",
+  "rating": 5,
+  "ratedon": "2019-05-28T15:15:15"
+}
+
+###
+
+GET http://localhost:8080/rest/rating/backgammon
+Content-Type: application/json
+
+###
+
+GET http://localhost:8080/rest/rating/backgammon/peter
+Content-Type: application/json
+
+###
