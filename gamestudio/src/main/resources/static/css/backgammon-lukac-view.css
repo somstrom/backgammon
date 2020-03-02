@@ -78,7 +78,7 @@ a img:hover {
     background: orange;
     border-radius: 50%;
     border:none;
-    opacity: 5%;
+    /*opacity: 5%;*/
 }
 
 .end {
@@ -250,7 +250,7 @@ header{
 .home img:hover{
     background: orange;
     border-radius: 0;
-    opacity: 0.2;
+    opacity: 0.8;
 }
 
 .form-flex{

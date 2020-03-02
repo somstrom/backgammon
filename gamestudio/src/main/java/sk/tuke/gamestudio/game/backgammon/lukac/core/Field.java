@@ -16,7 +16,7 @@ public class Field extends Tile {
     //private ArrayList<Integer[]> validMoves = new ArrayList<>();
 
     public Field(){
-        createEasy();
+        create();
         score = 200;
     }
 
